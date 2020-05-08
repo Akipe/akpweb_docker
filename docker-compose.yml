@@ -43,3 +43,15 @@ services:
       - ../theme:/var/www/akpweb/user/themes/akpview
     networks:
       - akpweb_dev
+
+  akpweb_nodejs-tools:
+    container_name: akpweb_nodejs-tools_dev
+    build:
+      context: ./nodejs-tools
+    user: "1000:1000"
+    tty: true
+    volumes:
+      - ../app:/opt
+      - ../theme:/opt/user/themes/akpview
+    networks:
+      - akpweb_dev
