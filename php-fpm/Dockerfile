@@ -9,7 +9,7 @@ RUN docker-php-ext-install mysqli \
     && docker-php-ext-install pdo_mysql
 
 # php-intl
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
         zlib1g-dev \
         libicu-dev \
         g++ \
@@ -26,7 +26,7 @@ RUN docker-php-ext-configure opcache --enable-opcache \
     && docker-php-ext-install opcache
 
 # Install GD
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install gd
 
 # Install zip
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
         zlib1g-dev \
         libzip-dev \
     && docker-php-ext-install zip
