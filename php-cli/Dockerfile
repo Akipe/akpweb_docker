@@ -9,7 +9,7 @@ RUN docker-php-ext-install mysqli \
     && docker-php-ext-install pdo_mysql
 
 # php-intl
-RUN apt-get update && apt-get install -y 
+RUN apt-get update && apt-get install -y \
         zlib1g-dev \
         libicu-dev \
         g++ \
@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install -y \
 
 # composer
 RUN apt-get update \
-    && apt-get install -y 
+    && apt-get install -y \
         git \
         zip \
         unzip \
